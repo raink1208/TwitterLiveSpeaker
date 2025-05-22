@@ -1,6 +1,0 @@
-@TwitterLiveSpeakerAPI_HostAddress = http://localhost:5044
-
-GET {{TwitterLiveSpeakerAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
