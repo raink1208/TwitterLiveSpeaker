@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter ChatWatcher",
+  "version": "1.0",
+  "description": "TwitterLiveSpeakerのチャット監視モジュールです",
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["https://x.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "X Chat Monitor"
+  }
+}
