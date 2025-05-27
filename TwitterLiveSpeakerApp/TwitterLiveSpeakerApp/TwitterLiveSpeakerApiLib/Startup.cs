@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TwitterLiveSpeakerApiLib.Infrastructure.VoiceBox;
+using TwitterLiveSpeakerApiLib.Services;
 
 namespace TwitterLiveSpeakerApiLib
 {
@@ -19,6 +21,12 @@ namespace TwitterLiveSpeakerApiLib
                           .AllowAnyMethod();
                 });
             });
+
+            services.AddHttpClient();
+
+            services.AddSingleton<SpeakerService>();
+
+            services.AddSingleton<VoiceBoxClient>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
