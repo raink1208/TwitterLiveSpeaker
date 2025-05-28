@@ -22,19 +22,19 @@ namespace TwitterLiveSpeakerApiLib.Controllers
         [HttpGet("speakers")]
         public async Task<IActionResult> GetSpeakerList()
         {
-
+            return Ok();
         }
 
         [HttpGet("speaker")]
         public async Task<IActionResult> GetSpeaker()
         {
-
+            return Ok();
         }
 
         [HttpPost("speaker")]
         public async Task<IActionResult> SetSpeaker()
         {
-
+            return Ok();
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TwitterLiveSpeakerApiLib.Infrastructure.VoiceBox;
 using TwitterLiveSpeakerApiLib.Services;
+using TwitterLiveSpeakerApiLib.SignalR;
 
 namespace TwitterLiveSpeakerApiLib
 {
@@ -23,6 +24,7 @@ namespace TwitterLiveSpeakerApiLib
             });
 
             services.AddHttpClient();
+            services.AddSignalR();
 
             services.AddSingleton<SpeakerService>();
 
@@ -41,6 +43,7 @@ namespace TwitterLiveSpeakerApiLib
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SpeakerAppHub>("/speakerAppHub");
             });
         }
     }

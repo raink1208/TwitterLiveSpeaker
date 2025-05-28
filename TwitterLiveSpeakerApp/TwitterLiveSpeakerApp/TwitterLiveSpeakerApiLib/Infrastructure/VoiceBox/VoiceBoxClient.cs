@@ -17,7 +17,8 @@ namespace TwitterLiveSpeakerApiLib.Infrastructure.VoiceBox
 
         public async Task<List<Speaker>> GetSpeakerList()
         {
-            var result = await _httpClient.GetAsync();
+            var result = await _httpClient.GetAsync("");
+            return null;
 
         }
     }
